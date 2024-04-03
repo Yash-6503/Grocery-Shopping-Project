@@ -1,0 +1,19 @@
+{
+  "name": "grocery-shopping",
+  "version": "1.0.0",
+  "description": "This Project is about Grocery Shopping Website it includes programming languages such as HTML, CSS, JavaScript, PHP, MySQL Database, etc.",
+  "main": "login.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yash-6503/Grocery-Shopping-Project.git"
+  },
+  "author": "Dev. Yash Walke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yash-6503/Grocery-Shopping-Project/issues"
+  },
+  "homepage": "https://github.com/Yash-6503/Grocery-Shopping-Project#readme"
+}

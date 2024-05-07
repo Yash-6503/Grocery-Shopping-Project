@@ -38,7 +38,7 @@ if(!isset($admin_id)){
    <div class="box-container">
 
       <div class="box">
-         <?php
+         <?php3
             $total_pendings = 0;
             $select_pendings = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
             while($fetch_pendings = mysqli_fetch_assoc($select_pendings)){
@@ -46,7 +46,7 @@ if(!isset($admin_id)){
             };
          ?>
          <h3>₹<?php echo $total_pendings; ?>/-</h3>
-         <p>total pendings</p>
+         <p><a href="admin_pendings.php" style="color:var(--light-color);">Total Pendings</a></p>
       </div>
 
       <div class="box">
@@ -58,7 +58,7 @@ if(!isset($admin_id)){
             };
          ?>
          <h3>₹<?php echo $total_completes; ?>/-</h3>
-         <p>completed paymets</p>
+         <p><a href="./admin_completed.php" style="color:var(--light-color);">Completed Payments</a></p>
       </div>
 
       <div class="box">
@@ -67,7 +67,11 @@ if(!isset($admin_id)){
             $number_of_orders = mysqli_num_rows($select_orders);
          ?>
          <h3><?php echo $number_of_orders; ?></h3>
-         <p>orders placed</p>
+         <span>
+            <p style="cursor:pointer;"><a href="./admin_o.php" style="color:var(--light-color);">Orders Placed</a></p>
+            
+         </span>
+      
       </div>
 
       <div class="box">
@@ -76,7 +80,7 @@ if(!isset($admin_id)){
             $number_of_products = mysqli_num_rows($select_products);
          ?>
          <h3><?php echo $number_of_products; ?></h3>
-         <p>products added</p>
+         <p><a href="./admin_added_products.php" style="color:var(--light-color);">Products Added</a></p>
       </div>
 
       <div class="box">
@@ -85,7 +89,7 @@ if(!isset($admin_id)){
             $number_of_users = mysqli_num_rows($select_users);
          ?>
          <h3><?php echo $number_of_users; ?></h3>
-         <p>normal users</p>
+         <p><a href="./normal_users.php" style="color:var(--light-color);">Normal Users</a></p>
       </div>
 
       <div class="box">
@@ -94,7 +98,7 @@ if(!isset($admin_id)){
             $number_of_admin = mysqli_num_rows($select_admin);
          ?>
          <h3><?php echo $number_of_admin; ?></h3>
-         <p>admin users</p>
+         <p><a href="admin_Users1.php" style="color:var(--light-color);">Admin Users</a></p>
       </div>
 
       <div class="box">
@@ -103,7 +107,7 @@ if(!isset($admin_id)){
             $number_of_account = mysqli_num_rows($select_account);
          ?>
          <h3><?php echo $number_of_account; ?></h3>
-         <p>total accounts</p>
+         <p><a href="./admin_total_accounts.php" style="color:var(--light-color);">Total Accounts</a></p>
       </div>
 
       <div class="box">
@@ -112,7 +116,7 @@ if(!isset($admin_id)){
             $number_of_messages = mysqli_num_rows($select_messages);
          ?>
          <h3><?php echo $number_of_messages; ?></h3>
-         <p>new messages</p>
+         <p><a href="./admin_contacts.php" style="color:var(--light-color);">New Messages</a></p>
       </div>
 
    </div>

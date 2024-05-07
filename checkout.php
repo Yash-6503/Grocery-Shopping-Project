@@ -37,12 +37,16 @@ if(isset($_POST['order'])){
 
     if($cart_total == 0){
         $message[] = 'your cart is empty!';
+        // alert("Your Cart is empty..");
     }elseif(mysqli_num_rows($order_query) > 0){
         $message[] = 'order placed already!';
+        // alert("Order Placed Already..");
     }else{
         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
         mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
         $message[] = 'order placed successfully!';
+
+        // window.alert("Order Placed Succesfully..");
     }
 }
 
@@ -61,7 +65,7 @@ if(isset($_POST['order'])){
 
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/style.css">
-
+    <script src="./Qr.js"></script>
 </head>
 <body>
    
@@ -116,7 +120,7 @@ if(isset($_POST['order'])){
                     <option value="cash on delivery">cash on delivery</option>
                     <option value="credit card">credit card</option>
                     <option value="paypal">paypal</option>
-                    <option value="paytm" id="paytm"><a href="./Qr.js">paytm</a></option>
+                    <option value="paytm" id="qr-code" onclick="qrCode()">paytm</option>
                     
                 </select>
             </div>
@@ -125,8 +129,8 @@ if(isset($_POST['order'])){
                 <input type="text" name="flat" placeholder="e.g. flat no.">
             </div>
             <div class="inputBox">
-                <span>address line 02 :</span>
-                <input type="text" name="street" placeholder="e.g.  streen name">
+                <span>Date :</span>
+                <input type="date" name="street">
             </div>
             <div class="inputBox">
                 <span>city :</span>
